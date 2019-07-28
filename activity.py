@@ -10,8 +10,7 @@ from random import randint
 import os
 
 # list of activities to choose from
-activities = [
-	"Play Games", 
+activities = [ 
 	"Webdev",
 	"Math",
 	"Python", 

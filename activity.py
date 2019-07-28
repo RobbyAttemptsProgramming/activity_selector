@@ -45,12 +45,12 @@ while cont:
 	activity = roll(activities)
 
 	os.system('clear')
-	
+
 	beautify(activity)
 
 	# Prints last selection after activity if there was one
 	if last_selection: 
-		print("Last Selection: " + last_selection + "\n")
+		print("Last Selection: " + last_selection + "\n\n\n")
 
 	# stores current activity to display on next roll
 	last_selection = activity

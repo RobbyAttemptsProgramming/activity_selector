@@ -39,11 +39,23 @@ def beautify(activity):
 # os.system is set to clear despite being on windows, due to using bash.
 # CLS would be used from Windows command line
 cont = True
+last_selection = ""
 
 while cont:
-	os.system('clear')
-	beautify(roll(activities))
+	activity = roll(activities)
 
+	os.system('clear')
+	
+	beautify(activity)
+
+	# Prints last selection after activity if there was one
+	if last_selection: 
+		print("Last Selection: " + last_selection + "\n")
+
+	# stores current activity to display on next roll
+	last_selection = activity
+
+	# Quit loop option
 	inp = input("Type Q to quit\n")
 
 	if inp.upper() == "Q":

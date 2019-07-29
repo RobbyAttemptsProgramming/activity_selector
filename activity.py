@@ -12,6 +12,7 @@ import os
 # list of activities to choose from
 activities = [ 
 	"Webdev",
+	"A+ Cert",
 	"Math",
 	"Python", 
 	"Clean", 

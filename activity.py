@@ -15,9 +15,7 @@ activities = [
 	"A+ Cert",
 	"Math",
 	"Python", 
-	"Clean", 
-	"Free Time", 
-	"Read"]
+	"Free Time"]
 
 """
 Uses random.randint to generate a number between 0 and the

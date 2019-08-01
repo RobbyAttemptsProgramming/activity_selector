@@ -88,6 +88,17 @@ def weighted_roll(weight):
 	else:
 		return False
 
+"""
+TODO
+Creates a schedule with argument number of hours, and activities.
+Returns a list for a schedule to be printed.
+"""
+def make_schedule(hours, activities):
+	schedule = []
+
+	for 
+
+
 # Main program loop
 # os.system is set to clear despite being on windows, due to using bash.
 # CLS would be used from Windows command line

@@ -9,13 +9,8 @@ from random import randint
 # Used to clear the terminal
 import os
 
-# list of activities to choose from
-activities = [ 
-	"Webdev",
-	"A+ Cert",
-	"Math",
-	"Python", 
-	"Free Time"]
+
+##Functions##
 
 """
 Uses random.randint to generate a number between 0 and the
@@ -89,51 +84,70 @@ def weighted_roll(weight):
 		return False
 
 """
-TODO
 Creates a schedule with argument number of hours, and activities.
 Returns a list for a schedule to be printed.
+
+Arguments: int for hours, and a list of activities
+
+Returns: a list containing activities
 """
 def make_schedule(hours, activities):
 	schedule = []
+	l = activities
 
-	for 
+	for activities in range(0, hours):
+		activity = roll(l)
+		schedule.append(activity)
 
+	return schedule
+
+"""
+Gets input from the user for number of hours to roll
+for in make_schedule()
+
+Arguments: None
+
+Returns: int for number of hours
+"""
+def get_hours():
+	os.system('clear')
+	hours = input("Hours to roll for: ")
+
+	return int(hours)
+
+
+##Main Loop##
 
 # Main program loop
 # os.system is set to clear despite being on windows, due to using bash.
 # CLS would be used from Windows command line
-cont = True
-last_activity = ""
-history = []
+
+# list of activities to choose from
+activities = [ 
+	"Webdev",
+	"A+ Cert",
+	"Math",
+	"Python", 
+	"Free Time"]
 activity = ""
+schedule = []
 
-while cont:
-	# Adds activity to history list
-	history.append(last_activity)
-	# stores current activity to display on next roll
-	last_activity = activity
-
-	activity = roll(activities)
-	os.system('clear')
-	beautify(activity)
-
-	# Prints last selection after activity if there was one
-	if last_activity: 
-		print("Last activity: " + last_activity + "\n\n\n")
-
+while True:
 	# Quit loop option
 	inp = input(
-		"Press Enter to roll again\n"
+		"\n\n\nPress Enter to roll a single activity\n" +
+		"Type M to make list\n" +
 		"Type Q to quit\n")
 
 	if inp.upper() == "Q":
-		cont = False
-	
-
-
-
-# What's left to add/figure out? I need to create a system to 
-# reduce the chance of an activity being selected more than once.
-# Specifically this would be an issue if "play games" appeared 
-# five times in a row. This would be an inefficient use of time and
-# completely contradicts the point of this program.
+		break;
+	elif inp.upper() == "M":
+		schedule = make_schedule(get_hours(), activities)
+		os.system('clear')
+		for activ in schedule:
+			print("- " + activ)
+		print('\n')
+	else:
+		activity = roll(activities)
+		os.system('clear')
+		beautify(activity)
